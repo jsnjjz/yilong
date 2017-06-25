@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		.box {
+			width: 1200px;
+			margin: 200px auto;
+		}
+		.ul1 li {
+			float: left;
+			height: 260px;
+			width: 200px;
+			position: relative;
+		}
+		.masking {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+		}
+		.masking h1 {
+			width: 20px;
+			color: #fff;
+			margin: 20px auto 0;
+		}
+		.bg-pic {
+			width: 100%;
+			height: 100%;
+		}
+		li:nth-child(1) .bg-pic {
+			background: url(image/1.jpg);
+		}
+		li:nth-child(2) .bg-pic {
+			background: url(image/2.jpg);
+		}
+		li:nth-child(3) .bg-pic {
+			background: url(image/3.jpg);
+		}
+		li:nth-child(4) .bg-pic {
+			background: url(image/4.jpg);
+		}
+		li:nth-child(5) .bg-pic {
+			background: url(image/5.jpg);
+		}
+		li:nth-child(6) .bg-pic {
+			background: url(image/6.jpg);
+		}
+	</style>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		$(function (){
+			$("li").hover(
+				function (){
+        $(this).stop().animate({width:'400px'},300).siblings().stop().animate({width:'160px'},300);
+				$(this).find('.masking').css({display:'none'});
+			},
+			function (){
+				$('ul li').stop().animate({width:'200px'});
+				$(this).find('.masking').css({display:'block'});
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul class="ul1">
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+			<li>
+				<div class="masking">
+					<h1>园林酒店</h1>
+				</div>
+				<div class="bg-pic"></div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
